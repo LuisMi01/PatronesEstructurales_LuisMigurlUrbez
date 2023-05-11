@@ -12,4 +12,5 @@ public interface ElementoFactory {
     Simple crearSimple(double precio, int codigo);
     Compuesto crearCompuesto(double precio, int codigo);
 
+    Elemento createElemento(double precio, int codigo);
 }

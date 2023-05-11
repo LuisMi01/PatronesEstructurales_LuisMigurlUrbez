@@ -5,7 +5,7 @@ import org.example.elementos.Elemento;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Kit extends Elemento {
+public abstract class Kit extends Elemento {
     private List<Elemento> elementos = new ArrayList<>();
     public Kit(int codigo) {
         super(0, codigo);
@@ -32,4 +32,5 @@ public class Kit extends Elemento {
         return precio * 0.9; // Aplica el 10% de descuento
     }
 
+    public abstract double calcularPrecio();
 }
