@@ -1,0 +1,103 @@
+@startuml
+
+package abstractfactory {
+  interface ElementoFactory {
+    Simple crearSimple(double precio, int codigo)
+    Compuesto crearCompuesto(double precio, int codigo)
+  }
+
+  class SimpleFactory {
+    Simple crearSimple(double precio, int codigo)
+  }
+
+  class CompuestoFactory {
+    Compuesto crearCompuesto(double precio, int codigo)
+  }
+}
+
+package composite {
+  interface Elemento {
+    int getCodigo()
+    double getPrecio()
+    void add(Elemento elemento)
+    void remove(Elemento elemento)
+    boolean esCompuesto()
+    List<Elemento> getElementos()
+  }
+
+  class Simple {
+    double precio
+    int codigo
+    double getPrecio()
+    int getCodigo()
+    void add(Elemento elemento)
+    void remove(Elemento elemento)
+    boolean esCompuesto()
+    List<Elemento> getElementos()
+  }
+
+  class Compuesto {
+    List<Elemento> elementos
+    double precio
+    int codigo
+    void add(Elemento elemento)
+    void remove(Elemento elemento)
+    boolean esCompuesto()
+    List<Elemento> getElementos()
+  }
+
+  abstract class Kit {
+    List<Elemento> elementos
+    double precio
+    int codigo
+    void add(Elemento elemento)
+    void remove(Elemento elemento)
+    boolean esCompuesto()
+    List<Elemento> getElementos()
+    abstract double getPrecio()
+    abstract double calcularPrecio()
+  }
+
+  class SimpleKit {
+    Simple simple
+    double getPrecio()
+    double calcularPrecio()
+  }
+
+  class CompuestoKit {
+    Compuesto compuesto
+    double getPrecio()
+    double calcularPrecio()
+  }
+}
+
+package kitfactory {
+  interface KitFactory {
+    Kit crearKit(int codigo)
+  }
+
+  class KitSimpleFactory {
+    Kit crearKit(int codigo)
+  }
+
+  class KitCompuestoFactory {
+    Kit crearKit(int codigo)
+  }
+}
+
+abstract class Moviliario {
+  String nombre
+  double precio
+  int codigo
+}
+
+class Silla extends Moviliario {
+}
+
+class Mesa extends Moviliario {
+}
+
+class Sofa extends Moviliario {
+}
+
+@enduml
