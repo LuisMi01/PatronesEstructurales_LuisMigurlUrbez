@@ -26,11 +26,7 @@ public class Compuesto extends Elemento {
 
     @Override
     public double getPrecio() {
-        double precio = 0;
-        for (Elemento elemento : elementos) {
-            precio += elemento.getPrecio();
-        }
-        return precio * 0.9;
+        return 100;
     }
 
 

@@ -9,7 +9,7 @@ import java.util.List;
 public class KitSimpleFactory implements KitFactory{
     @Override
     public Kit createKit(int codigo, List<Elemento> elementos) {
-        return new SimpleKit(codigo, elementos);
+        return new SimpleKit(elementos.get(0));
     }
 
 }

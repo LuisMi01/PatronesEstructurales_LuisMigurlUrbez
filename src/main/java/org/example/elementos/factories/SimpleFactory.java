@@ -24,4 +24,9 @@ public class SimpleFactory implements ElementoFactory {
     public Compuesto crearCompuesto(double precio, int codigo) {
         return null;
     }
+
+    @Override
+    public Elemento createElemento(double precio, int codigo) {
+        return null;
+    }
 }

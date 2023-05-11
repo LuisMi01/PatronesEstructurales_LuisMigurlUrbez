@@ -13,6 +13,12 @@ public class CompuestoFactory implements ElementoFactory {
     public Compuesto crearCompuesto(double precio, int codigo) {
         return new Compuesto(precio, codigo);
     }
+
+    @Override
+    public Elemento createElemento(double precio, int codigo) {
+        return null;
+    }
+
     @Override
     public Elemento crearElementoSimple(double precio, int codigo) {
         return new Simple(precio, codigo);

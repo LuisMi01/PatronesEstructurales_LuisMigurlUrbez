@@ -9,8 +9,8 @@ public class CompuestoKit extends Kit {
 
     private List<Elemento> elementos;
 
-    public CompuestoKit(List<Elemento> elementos) {
-        super(elementos.stream().map(Elemento::getCodigo).reduce("", String::concat));
+    public CompuestoKit(int codigo, List<Elemento> elementos) {
+        super(codigo);
         this.elementos = elementos;
     }
 
