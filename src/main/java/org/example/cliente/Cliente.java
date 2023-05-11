@@ -49,7 +49,7 @@ public class Cliente {
             } else if (elemento instanceof Compuesto compuesto) {
                 System.out.println("- Compuesto - Código: " + compuesto.getCodigo() + ", Precio: " + compuesto.getPrecio());
                 for (Elemento subElemento : compuesto.getElementos()) {
-                    System.out.println("  - Subelemento - Código: " + subElemento.getCodigo() + ", Precio: " + subElemento.getPrecio());
+                    System.out.println("  - Subelemento - Código: " );
                 }
             }
         }
